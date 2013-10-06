@@ -284,10 +284,10 @@
   };
 
   var closest = function(element, className) {
-    while (element && !element.classList.contains(className)) {
+    while (element && element.classList && !element.classList.contains(className)) {
       element = element.parentNode;
     }
-    if (element && element.classList.contains(className)) {
+    if (element && element.classList && element.classList.contains(className)) {
       return element;
     }
     return undefined;
